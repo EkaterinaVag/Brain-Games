@@ -22,7 +22,7 @@ const gameProgression = () => {
 
     const progressionForUser = progression;
     progressionForUser[j] = '..';
-    const gameQuestion = progressionForUser.join(' ');
+    const gameQuestion = `${progressionForUser.join(' ')}`;
 
     return [gameQuestion, correctAnswer];
   };

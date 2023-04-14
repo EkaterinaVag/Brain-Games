@@ -4,7 +4,7 @@ const gameEven = () => {
   const gameRulls = 'Answer "yes" if the number is even, otherwise answer "no".';
 
   const generateRound = () => {
-    const gameQuestion = getRandomNumber(100);
+    const gameQuestion = `${getRandomNumber(100)}`;
 
     const isEven = (num) => {
       if (num % 2 === 0) {

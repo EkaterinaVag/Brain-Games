@@ -14,7 +14,7 @@ export const game = (gameRulls, generateRound) => {
 
   for (let i = 0; i < 3; i += 1) {
     const [gameQuestion, correctAnswer] = generateRound();
-    console.log(gameQuestion);
+    console.log(`Question: ${gameQuestion}`);
     const answer = readlineSync.question('Your answer: ');
 
     if (answer === correctAnswer) {

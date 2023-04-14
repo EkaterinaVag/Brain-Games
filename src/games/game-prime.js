@@ -4,7 +4,7 @@ const gamePrime = () => {
   const gameRulls = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
   const generateRound = () => {
-    const gameQuestion = getRandomNumber(50);
+    const gameQuestion = `${getRandomNumber(50)}`;
 
     const isPrime = (num) => {
       if (num < 2) {
