@@ -11,7 +11,7 @@ const gameProgression = () => {
     const setProgression = (length, start, step) => {
       const result = [];
       for (let i = 0; i < length; i += 1) {
-        result.push(start += step);
+        result.push(start + step * i);
       }
       return result;
     };
@@ -19,6 +19,7 @@ const gameProgression = () => {
     const progression = setProgression(progressionLength, progressionStart, progressionStep);
     const j = getRandomNumber(9);
     const correctAnswer = String(progression[j]);
+
     const progressionForUser = progression;
     progressionForUser[j] = '..';
     const gameQuestion = progressionForUser.join(' ');
