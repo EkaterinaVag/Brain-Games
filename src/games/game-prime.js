@@ -1,10 +1,11 @@
-import { getRandomNumber, game } from '../index.js';
+import runEngine from '../index.js';
+import getRandomInRange from '../utils.js';
 
-const gamePrime = () => {
+const runPrimeGame = () => {
   const gameRulls = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
   const generateRound = () => {
-    const gameQuestion = `${getRandomNumber(50)}`;
+    const gameQuestion = `${getRandomInRange(1, 50)}`;
 
     const isPrime = (num) => {
       if (num < 2) {
@@ -22,7 +23,7 @@ const gamePrime = () => {
 
     return [gameQuestion, correctAnswer];
   };
-  game(gameRulls, generateRound);
+  runEngine(gameRulls, generateRound);
 };
 
-export default gamePrime;
+export default runPrimeGame;

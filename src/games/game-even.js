@@ -1,10 +1,11 @@
-import { getRandomNumber, game } from '../index.js';
+import runEngine from '../index.js';
+import getRandomInRange from '../utils.js';
 
-const gameEven = () => {
+const runEvenGame = () => {
   const gameRulls = 'Answer "yes" if the number is even, otherwise answer "no".';
 
   const generateRound = () => {
-    const gameQuestion = `${getRandomNumber(100)}`;
+    const gameQuestion = `${getRandomInRange(1, 100)}`;
 
     const isEven = (num) => {
       if (num % 2 === 0) {
@@ -17,7 +18,7 @@ const gameEven = () => {
     return [gameQuestion, correctAnswer];
   };
 
-  game(gameRulls, generateRound);
+  runEngine(gameRulls, generateRound);
 };
 
-export default gameEven;
+export default runEvenGame;

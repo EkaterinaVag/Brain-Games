@@ -1,15 +1,16 @@
-import { getRandomNumber, game } from '../index.js';
+import runEngine from '../index.js';
+import getRandomInRange from '../utils.js';
 
-const gameCalc = () => {
+const runCalcGame = () => {
   const gameRulls = 'What is the result of the expression?';
 
   const generateRound = () => {
     const sings = ['+', '-', '*'];
-    const num = getRandomNumber(2);
+    const num = getRandomInRange(0, 2);
     const operation = sings[num];
 
-    const value1 = getRandomNumber(10);
-    const value2 = getRandomNumber(10);
+    const value1 = getRandomInRange(0, 10);
+    const value2 = getRandomInRange(0, 10);
 
     const gameQuestion = `${value1} ${operation} ${value2}`;
 
@@ -30,7 +31,7 @@ const gameCalc = () => {
     return [gameQuestion, correctAnswer];
   };
 
-  game(gameRulls, generateRound);
+  runEngine(gameRulls, generateRound);
 };
 
-export default gameCalc;
+export default runCalcGame;

@@ -1,12 +1,13 @@
-import { getRandomNumber, game } from '../index.js';
+import runEngine from '../index.js';
+import getRandomInRange from '../utils.js';
 
-const gameProgression = () => {
+const runProgressionGame = () => {
   const gameRulls = 'What number is missing in the progression?';
 
   const generateRound = () => {
     const progressionLength = 10;
-    const progressionStep = getRandomNumber(5) + 1;
-    const progressionStart = getRandomNumber(50);
+    const progressionStep = getRandomInRange(1, 5);
+    const progressionStart = getRandomInRange(1, 50);
 
     const setProgression = (length, start, step) => {
       const result = [];
@@ -17,7 +18,7 @@ const gameProgression = () => {
     };
 
     const progression = setProgression(progressionLength, progressionStart, progressionStep);
-    const j = getRandomNumber(9);
+    const j = getRandomInRange(0, 9);
     const correctAnswer = String(progression[j]);
 
     const progressionForUser = progression;
@@ -27,7 +28,7 @@ const gameProgression = () => {
     return [gameQuestion, correctAnswer];
   };
 
-  game(gameRulls, generateRound);
+  runEngine(gameRulls, generateRound);
 };
 
-export default gameProgression;
+export default runProgressionGame;

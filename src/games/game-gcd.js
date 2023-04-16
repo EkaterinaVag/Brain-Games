@@ -1,11 +1,12 @@
-import { getRandomNumber, game } from '../index.js';
+import runEngine from '../index.js';
+import getRandomInRange from '../utils.js';
 
-const gameGcd = () => {
+const runGcdGame = () => {
   const gameRulls = 'Find the greatest common divisor of given numbers.';
 
   const generateRound = () => {
-    const value1 = getRandomNumber(20);
-    const value2 = getRandomNumber(20);
+    const value1 = getRandomInRange(1, 20);
+    const value2 = getRandomInRange(1, 20);
 
     const gameQuestion = `${value1} ${value2}`;
 
@@ -21,7 +22,7 @@ const gameGcd = () => {
     return [gameQuestion, correctAnswer];
   };
 
-  game(gameRulls, generateRound);
+  runEngine(gameRulls, generateRound);
 };
 
-export default gameGcd;
+export default runGcdGame;
