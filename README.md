@@ -24,7 +24,7 @@ Prerequisites: Node.js
 ## Games
 
 ## Parity check
-Answer 'yes' if this number is even and 'no' if this number is odd.  
+Answer 'yes' if given number is even and 'no' if this number is odd.  
 **To start the game:**
 ```
 
@@ -64,7 +64,7 @@ brain-progression
 [![asciicast](https://asciinema.org/a/577005.svg)](https://asciinema.org/a/577005)
 
 ## Is this a prime number?
-Answer 'yes' if this number is prime and 'no' if it is not.  
+Answer 'yes' if given number is prime and 'no' if it is not.  
 **To start the game:**
 ```
 
