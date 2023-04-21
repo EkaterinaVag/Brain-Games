@@ -1,36 +1,37 @@
 import runEngine from '../index.js';
 import getRandomInRange from '../utils.js';
 
+const getRandomOpetator = () => {
+  const operators = ['+', '-', '*'];
+  return operators[getRandomInRange(0, operators.length - 1)];
+};
+
+const calculation = (num1, num2, operator) => {
+  switch (operator) {
+    case '+':
+      return num1 + num2;
+    case '-':
+      return num1 - num2;
+    case '*':
+      return num1 * num2;
+    default:
+      throw new Error(`Operator ${operator} - is incorrect`);
+  }
+};
+const generateRound = () => {
+  const value1 = getRandomInRange(0, 10);
+  const value2 = getRandomInRange(0, 10);
+  const operation = getRandomOpetator();
+
+  const gameQuestion = `${value1} ${operation} ${value2}`;
+
+  const correctAnswer = `${calculation(value1, value2, operation)}`;
+
+  return [gameQuestion, correctAnswer];
+};
+
 const runCalcGame = () => {
   const gameRulls = 'What is the result of the expression?';
-
-  const generateRound = () => {
-    const sings = ['+', '-', '*'];
-    const num = getRandomInRange(0, 2);
-    const operation = sings[num];
-
-    const value1 = getRandomInRange(0, 10);
-    const value2 = getRandomInRange(0, 10);
-
-    const gameQuestion = `${value1} ${operation} ${value2}`;
-
-    const getCorrectAnswer = () => {
-      switch (operation) {
-        case '+':
-          return value1 + value2;
-        case '-':
-          return value1 - value2;
-        case '*':
-          return value1 * value2;
-        default:
-          return null;
-      }
-    };
-    const correctAnswer = `${getCorrectAnswer()}`;
-
-    return [gameQuestion, correctAnswer];
-  };
-
   runEngine(gameRulls, generateRound);
 };
 
