@@ -14,7 +14,7 @@ Prerequisites: Node.js
 
  git clone https://github.com/EkaterinaVag/Brain-Games.git
 
- cd frontend-project-44
+ cd Brain-Games
 
  make install
 
