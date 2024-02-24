@@ -12,7 +12,7 @@ To exit a game simply run CTRL + C.
 Prerequisites: Node.js 
 ```
 
- git clone https://github.com/EkaterinaVag/frontend-project-44.git
+ git clone https://github.com/EkaterinaVag/Brain-Games.git
 
  cd frontend-project-44
 
